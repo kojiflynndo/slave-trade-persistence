@@ -18,9 +18,8 @@ library(grid)
 library(gridExtra)
 library(rgeos)
 library(ggtext)
-library(gganimate)
-library(gifski)
 library(kableExtra)
+library(mathjaxr)
 
 # Load dataset that are used in multiple places    ----------------
 slave_trade <- read_dta('data/slave_trade_QJE.dta')
@@ -117,7 +116,7 @@ ui <- fluidPage(
                 ),
                 
                 h3(
-                    "Figure 1: Differing Paths of Economic Development Since 1950"
+                    "Figure I: Differing Paths of Economic Development Since 1950"
                     ),
                 
                 h4(
@@ -142,7 +141,7 @@ ui <- fluidPage(
                 ),
                 
                 p(
-                   "The dataset I visualize here is drawn from a paper by economist Nathan Nunn, 'The Long-Term Effects of Africa's Slave Trades' (Quarterly Journal of Economics, 2008). After controlling for a variety of plausibly relevant factors, Nunn finds a statistically significant negative relationship between measures of people enslaved and stolen (normalized by area) and per capita GDP in 2000. (Visualize those results in the Plot and Map Relationships pages.) Turning to the question of causality, Nunn tests a several alternative hypotheses and finds that none pass muster. For instance, it could be that, for example, societies that were already underdeveloped tended to be selected into the slave trade and so continue to be today for that reason, rather than the slave trade. In fact, the opposite seems true--it was the wealthiest African societies which saw the most enslavement. (See Methodological Notes for more details.) Instead, he suggests that the causal mechanism was the slave trade's deletirious influence on early state development and, in later research, points to the mistrust engendered by the slave trades as one cause."
+                   "The dataset I visualize here is drawn from a paper by Harvard economist Nathan Nunn, titled 'The Long-Term Effects of Africa's Slave Trades' (Quarterly Journal of Economics, 2008). After controlling for a variety of plausibly relevant factrs, Nunn finds a statistically significant negative relationship between measures of people enslaved and stolen (normalized by area) and per capita GDP in 2000. (Visualize those results in the Plot and Map Relationships pages.) He suggests that two causal mechanisms are the slave trade's deletirious influence on early state development and the mistrust engendered by slave trades. (See Methodological Notes for more details.)"
                 ),
                 
                 p(
@@ -155,11 +154,11 @@ ui <- fluidPage(
                 ),
                 
                 p(
-                    "The main contribution of my work here is extending this analysis using per capita GDP figures from 1950 to 2015. In the original paper, the measure of contemporary economic performance was per capita GDP in 2000. In this analysis, I evaluate the persistent effects of enslavement across more than six decades. For each year, I analyze each of Nunn's seven regression models and compile the results."
+                    "The main contribution of my work here is extending this analysis using per capita GDP figures from 1950 to 2015. In the original paper, the measure of contemporary economic performance was a snapshot of per capita GDP in 2000. In this analysis, I evaluate the persistent effects of enslavement across more than six decades. For each year, I analyze each of Nunn's seven regression models and compile the results."
                 ),
                 
                 p(
-                    "Similar to above, I have calculated the magnitude of the effects on per capita income associated with a one-standard-deviation decrease in the variable measuring intensity of enslavement for each year in my time-series. The absolute difference in per capita income steadily grows over the entire time-series, reaching $677 per capita in 2015. The relative difference, on the other hand, peaks in 2000. At that point, a one-standard-deviation decrease in the variable measuring intensity of enslavement was associated with per capita income rising to $1,864 from the mean of $1,264, or a 49 percent increase in per capita income levels."
+                    "The absolute difference in per capita income steadily grows over the entire time-series, reaching $677 per capita in 2015. The relative difference, on the other hand, peaks in 2000. At that point, a one-standard-deviation decrease in the variable measuring intensity of enslavement was associated with per capita income rising to $1,864 from the mean of $1,264, or a 49 percent increase in per capita income levels."
                 ),
                 
                 p(
@@ -169,7 +168,7 @@ ui <- fluidPage(
                 
                 
                 h3(
-                    "Figure 2: Enslavement's Persistent Effects on Poverty and Prosperity"
+                    "Figure II: Enslavement's Persistent Effects on Poverty and Prosperity"
                 ),
                 
                 h4(
@@ -189,7 +188,7 @@ ui <- fluidPage(
                 ),
                 
                 h3(
-                    "Figure 3: The Magnitude of the Slave Trades' Legacy Increased After Decolonization"
+                    "Figure III: The Magnitude of the Slave Trades' Legacy Increased After Decolonization"
                 ),
     
                 
@@ -197,7 +196,7 @@ ui <- fluidPage(
                     HTML(
                         "Size of income increase associated one-standard-deviation lower enslavement
                         <br>
-                        <span style = 'color: #e78ac3'>Regression model with best controls</span> highlighted"
+                        <span style = 'color: #e78ac3'>Regression model with most controls</span> highlighted"
         
                     )
                 ),
@@ -208,7 +207,7 @@ ui <- fluidPage(
                 p(),
                 
                 p(
-                    "What explains the seeming decline in importance around 2000? This is a question that may have already been answered in the vast literature on the economic history of persistence, but I am currently unaware of the reason. One observation is that around 2000, average per capita GDP began to grow at a much more rapid pace than in the previous decades. As noted above, the absolute effect has only grown and peaks in 2015, the last year I had data to analyze. It may be that the relative effect diminishes in the future as African countries become wealthier."
+                    "What explains the seeming decline in importance around 2000? This is a question that may have already been answered in the vast literature on the economic history of persistence, but I am currently unaware of the explanation. One observation is that around 2000, average per capita GDP began to grow at a much more rapid pace than in the previous decades. As noted above, the absolute effect has only grown and peaks in 2015, the last year I had data to analyze. It may be that the relative effect diminishes in the future as African countries become wealthier while the absolute effect continues to grow."
                 ),
                 
                 h2(
@@ -553,7 +552,7 @@ ui <- fluidPage(
                             ),
                             
                             p(
-                                "Precolonial state development: Index of precolonial state development, ranging from 0 to 1. Includes political, ethnic, and infrastructural centralization, for example (from Gennaoili and Rainer 2007)"
+                                "Precolonial state development: Index of precolonial state development, ranging from 0 to 1. Includes political, ethnic, and infrastructural centralization, for example (from Gennaioili and Rainer 2007)"
                             )
                             
                              
@@ -562,17 +561,210 @@ ui <- fluidPage(
                      )
                  )),
         # Methodological Notes Panel -----
-        tabPanel('Methodological Notes',
+        tabPanel('Comprehensive Methodological Notes',
                  
                  mainPanel(
                      h3(
-                         'Forthcoming! This page is under construction'
+                         'Replicating the Original Study'
+                     ),
+                     
+                     
+                     p(
+                         HTML(
+                             "First, I replicate the findings in The Long-Term Effects of Africa's Slave Trades (Nunn 2008). To begin, I retrieved the dataset from <a href = 'https://scholar.harvard.edu/nunn/pages/data-0'>Nunn's website</a>."
+                         )
+                     ),
+                     
+                     p(
+                         "To test evaluate the relationship between the rate of enslavement from 1400 to 1900 and income in 2000, Nunn constructs a series linear regression models. The baseline equation for the linear regression models is as follows:"
+                     ),
+                     
+                     uiOutput('regression'),
+                     
+                     withMathJax(),
+
+                     helpText(
+                         'where ln \\(y\\_{i}\\) is the natural logarithm of per capita GDP in country i in 2000, ln(exports \\(_{i}\\) /area \\(_{i}\\) ) is the natural logarithm of the number of people enslaved from 1400 to 1900 between 1400 and 1900 per 10,000 square kilometers, \\(\\textbf{C}_{i}^\\prime\\) is a vector of dummy variables for colonization by different European empires, and  \\(\\textbf{X}_{i}^\\prime\\) is a vector of variables to control for geography and climate.'
+                         ),
+                     
+                     p(
+                         "The first model includes only the fixed effects of being colonized by different European empires. These are coded as dummy variables, where for each empire a 1 indicates colonization by that empire and a 0 indicates no colonization by that empire."
+                     ),
+                     
+                     p(
+                         "The second model adds geographic factors which may contribute to economic development, including latitude and longitude, average minimum monthly rainfall in millimeters, average maximum monthly afternoon humidity in percentage, average minimum monthly temperature in degrees Celsius, and the natural logarithm of coastline divided by land area in millions of square kilometers."
+                     ),
+                     
+                     p(
+                         "To test for robustness to differences between North African and island countries and sub-Saharan African countries, the third model drops North African and island countries. The fourth model returns the dropped countries and adds control variables that account for some differences between North African countries, islands, and the rest of Africa. Namely, a fixed effect for each is added as well as the percentage of each country that is Muslim and a dummy variable indicating 1 if the country's legal origin is French and 0 otherwise."
+                     ),
+                     
+                     p(
+                         "The fifth model adds natural resource endowments, measured by the natural logarithms of gold production per capita, oil production per capita, and diamond production per capita. The sixth and final model contains all the control variables and additionally drops North African and island countries."
+                     ),
+                     
+                     p(
+                         "Across all these controls, the effect of higher levels of enslavement on per capita GDP is consistently negative and statistically significant. This does not demonstrate causality, but does establish that the relationship remains significant after accounting for many other plausible. Later in this paper and in later work, Nunn also demonstrates two causal mechanisms: a breakdown in cultural trust levels and the destruction of precolonial political and social organization systems. See more on causality in the following sections."
+                     ),
+                     
+                     p(
+                         "Table I below shows the results of reconstructing Nunn's analysis, and matches Table III in Nunn 2008. "
+                     ),
+                     
+                     h3(
+                         "Table I: Replication of Nunn 2008"
+                     ),
+                     
+                     includeHTML('repl_table.html'),
+                     
+                     p(),
+                     
+                     p(),
+                     
+                     p(
+                         HTML(
+                         
+                             "To see all the code for this analysis and run it yourself, go to the <a href = 'https://github.com/kojiflynndo/slave-trade-persistence'>replication-original.R</a> file. To download the original dataset, visit <a href = 'https://scholar.harvard.edu/nunn/pages/data-0'>Nunn's website</a> or <a href = 'https://github.com/kojiflynndo/slave-trade-persistence'>slave_trade_QJE.dta</a>."
+                     
+                         )
+                     ),
+                     
+                     h3(
+                         "Extending the Analysis"
                      ),
                      
                      p(
                          HTML(
-                             "For now, you can see the dataset and code on my <a href = 'https://github.com/kojiflynndo/slave-trade-persistence'>GitHub page</a>."
+                         
+                             "I start by extending the analysis by adding new data to analyze from <a href 'https://pophealthmetrics.biomedcentral.com/articles/10.1186/1478-7954-10-12'>'Developing a comprehensive time series of GDP per capita for 210 countries from 1950 to 2015'</a> (James et al.). In the original paper, the persistence of the effect is measured by comparing against a snapshot of per capita GDP in 2000. For each year from 1950 to 2015, I add per capita GDP figures to each country in the original dataset using Maddison time-series from James et al., which is an extended version of the dataset that Nunn uses."
+                     
                          )
+                     ),
+                     
+                     p(
+                         "For each year, I then compute the results of each of the above six models. Results of the variation in effect size are visualized in Figure I (also shown on the Home page). Table II reports results each decade starting in 1950."
+                     ),
+                     
+                     h3(
+                         "Figure I: The Magnitude of the Slave Trades' Legacy Increased After Decolonization"
+                     ),
+                     
+                     
+                     h4(
+                         HTML(
+                             "Size of income increase associated one-standard-deviation lower enslavement
+                        <br>
+                        <span style = 'color: #e78ac3'>Model 5</span> highlighted"
+                             
+                         )
+                     ),
+                     
+                     plotOutput(outputId = 'effect_size_method'),
+                     
+                     p(), 
+                     
+                     p(),
+                     
+                     h3(
+                         "Table II: The Magnitude of the Slave Trade's Influence on African Per Capita Income Since 1950"
+                     ),
+                     
+                     tableOutput('table2decades'),
+                     
+                     p(
+                         'I also replicate the tangible implications of the results for each year. In particular, Nunn writes: "If for purely illustrative purposes one interprets the OLS estimates as causal, then according to the estimate from column (5), for a country initially with the mean level of income of $1,249, a one-standard-deviation decrease in the slave export variable will raise income to $1,864, which is a 50% increase in income."'
+                     ),
+                     
+                     p(
+                         'The absolute difference in per capita income steadily grows over the entire time-series I produce, reaching $677 per capita in 2015. The relative difference, on the other hand, peaks in 2000. At that point, a one-standard-deviation decrease in the variable measuring intensity of enslavement was associated with per capita income rising to $1,864 from the mean of $1,264, or a 49 percent increase in per capita income levels.'
+                     ),
+                     
+                     p(
+                         'In actual figures, one standard-deviation in the variable measuring intensity of enslavement corresponds with approximately 147,700 people stolen, enslaved, and sold into the slave trades per ten thousand square kilometers.'
+                     ),
+                     
+                     p(
+                         "Results of the variation in the effect are visualized in Figure II (also shown on the Home page)."
+                     ),
+                     
+                     h3(
+                         "Figure II: Enslavement's Persistent Effects on Poverty and Prosperity"
+                     ),
+                     
+                     h4(
+                         HTML(
+                             "<span style = 'color: #e5c494'>Mean income</span> and <span style = 'color: #8da0cb'>income associated one-standard-deviation lower enslavement</span>"
+                             
+                         )
+                     ),
+                     
+                     plotOutput(outputId = 'sd_decrease_method'),
+                     
+                     p(), 
+                     
+                     p(),
+                     
+                     h3(
+                         'Discussion'
+                     ),
+                     
+                     
+                     p(
+                         'One argument explaining the long term effects of the slave trade suggests that the impacts may have been most significant after official decolonization because precolonial state capacity and centralization then became highly influential on political and economic development. Consistent with that hypothesis, I find that the magnitude of the effect trends upward starting around 1960, at which point a majority (28) of African countries had gained independence.'
+                     ),
+                     
+                     p(
+                         'What explains the seeming decline in importance around 2000? This is a question that may have already been answered in the vast literature on the economic history of persistence, but I am currently unaware of the explanation. One observation is that around 2000, average per capita GDP began to grow at a much more rapid pace than in the previous decades. As noted above, the absolute effect has only grown and peaks in 2015, the last year I had data to analyze. It may be that the relative effect diminishes in the future as African countries become wealthier while the absolute effect continues to grow.'
+                     ),
+                     
+                     p(
+                         HTML(
+                         
+                             "To see all the code for this analysis and run it yourself, go to the <a href = 'https://github.com/kojiflynndo/slave-trade-persistence'>replication-looped.R</a> file. To see the results of the analysis for each year from 1950 to 2015, go to <a href = 'https://github.com/kojiflynndo/slave-trade-persistence'>time_series_effects.csv</a>."
+                     
+                             )
+                     ),
+                     
+                     h3(
+                         "The Question of Causality"
+                     ),
+                     
+                     p(
+                         "The results above do not prove a causal relationship between the intensity of enslavement in a country and subsequent economic outcomes. In the original paper, Nunn takes two possible alternative explanations and empirically tests their validity (I do not replicate those analyses here). "
+                     ),
+                     
+                     p(
+                         "First, it could be that societies that were already underdeveloped tended to be selected into the slave trade and so continue to be poorer today for that reason, rather than because of the slave trade. In fact, the opposite seems true: it was the wealthiest African societies which saw the most enslavement. This is because only those societies which had institutions which would facilitate trade (like centralized governments, national currencies, and well-developed trading networks) were engaged with Europeans when European demand shifted from more ordinary forms of trade to the slave trade."
+                     ),
+                     
+                     p(
+                         "Population density can be used as a good proxy for economic prosperity in historical societies where more reliable data is unavailable. Consistent with the above explanation, it was the societies with higher population density in 1400 that later had more intense enslavement."
+                     ),
+                     
+                     h3(
+                         "Figure III: Prosperity in 1400 is associated with more, not less, subsequent enslavement"
+                     ),
+                     
+                     h4(
+                         "Population density used as a proxy for economic prosperity"
+                     ),
+                     
+                     plotOutput('popdens'),
+                     
+                     p(),
+                     
+                     p(),
+                     
+                     p(
+                         "As an additional test, Nunn uses instrumental variables which are highly correlated with the intensity of enslavement but not with other relevant country characteristics. If the effect of these instrumental variables on economic performance today is significant, then one can say with higher certainty that it was the slave trades which are the relevant distinction, since other country characteristics are not a factor. To do this, Nunn finds the sailing and overland distance of each country from the largest ports which imported enslaved Africans in the Americas (Atlantic trade), Mauritius and Oman (Indian Ocean trade), North African markets in Algiers, Tunis, Tripoli, Benghazi, and Cairo (trans-Saharan trade), and Massawa, Suakin, and Djibouti (the Red Sea trade)."
+                     ),
+                     
+                     p(
+                         'Consistent with the hypothesis that the intensity of enslavement is causally related to the present day, Nunn concluds: "Being further from slave markets was good for growth."'
+                     ),
+                     
+                     p(
+                         "For more on causality, see the original paper as well as 'The Slave Trade and the Origins of Mistrust in Africa' (Nunn and Wantcheckon 2011) and 'Ruggedness: The Blessing of Bad Geography in Africa' (Nunn and Puga 2013)."
                      )
                  )
                  ),
@@ -581,15 +773,84 @@ ui <- fluidPage(
         tabPanel('Citations and Resources',
                  
                  mainPanel(
+                     
                      h3(
-                         'Forthcoming! This page is under construction'
+                         "Original Paper and Follow-Ups:"
                      ),
                      
                      p(
-                         HTML(
-                             "For now, you can see the dataset and code on my <a href = 'https://github.com/kojiflynndo/slave-trade-persistence'>GitHub page</a>."
-                         )
+                         "Nunn, Nathan, The Long-Term Effects of Africa&Apos;S Slave Trades (September 2007). NBER Working Paper No. w13367, Available at SSRN: https://ssrn.com/abstract=1012821"
+                     ),
+                     
+                     p(
+                         "Nunn, Nathan and Wantchekon, Leonard, The Slave Trade and the Origins of Mistrust in Africa (March 2009). NBER Working Paper No. w14783, Available at SSRN: https://ssrn.com/abstract=1359479"
+                     ),
+                     
+                     p(
+                         "Nunn, Nathan and Puga, Diego, Ruggedness: The Blessing of Bad Geography in Africa (April 2009). NBER Working Paper No. w14918, Available at SSRN: https://ssrn.com/abstract=1394825"
+                     ),
+                     
+                     h3(
+                         "Other Fascinating Research in Persistence:"
+                     ),
+                     
+                     p(
+                         "Dell, Melissa and Olken, Benjamin A., The Development Effects of the Extractive Colonial Economy: The Dutch Cultivation System in Java (November 2017). NBER Working Paper No. w24009, Available at SSRN: https://ssrn.com/abstract=3070033"
+                     ),
+                     
+                     p(
+                         "Giuliano, Paola and Nunn, Nathan, Understanding Cultural Persistence and Change. IZA Discussion Paper No. 10930, Available at SSRN: https://ssrn.com/abstract=3029800"
+                     ),
+                     
+                     p(
+                         "Hsiang, Solomon and Jina, Amir, The Causal Effect of Environmental Catastrophe on Long-Run Economic Growth: Evidence from 6,700 Cyclones (July 2014). NBER Working Paper No. w20352, Available at SSRN: https://ssrn.com/abstract=2475699"
+                     ),
+                     
+                     p(
+                         "Nunn, Nathan and Qian, Nancy, The Potato'S Contribution to Population and Urbanization: Evidence from an Historical Experiment (July 2009). NBER Working Paper No. w15157, Available at SSRN: https://ssrn.com/abstract=1434673"
+                     ),
+                     
+                     p(
+                         "Alesina, Alberto F. and Giuliano, Paola and Nunn, Nathan, On the Origins of Gender Roles: Women and the Plough. Harvard Institute of Economic Research Discussion Paper No. 2194, Available at SSRN: https://ssrn.com/abstract=1856152 or http://dx.doi.org/10.2139/ssrn.1856152"
+                     ),
+                     
+                     p(
+                         "Dell, Melissa, The Persistent Effects of Peru's Mining Mita (January 5, 2010). Available at SSRN: https://ssrn.com/abstract=1596425 or http://dx.doi.org/10.2139/ssrn.1596425"
+                     ),
+                     
+                     
+                     h3(
+                         "A Methodological Criticism of Many Persistence Studies:"
+                     ),
+                     
+                     p(
+                         "Kelly, Morgan, The Standard Errors of Persistence (June 3, 2019). Available at SSRN: https://ssrn.com/abstract=3398303 or http://dx.doi.org/10.2139/ssrn.3398303"
+                     ),
+                     
+                     h3(
+                         "Sources of Data in Original and Extended Analysis"
+                     ),
+                     
+                     p(
+                         "Parker, Philip M., National Cultures of the World: A Statistical Reference (London: Greenwood Press, 1997)."
+                     ),
+                     
+                     p(
+                         "Maddison, Angus, The World Economy: Historical Statistics (Organisation for Economic Co-operation and Development, Paris, 2003)."
+                     ),
+                     
+                     p(
+                         "Alesina, Alberto F. and Easterly, William and Devleeschauwer, Arnaud and Kurlat, Sergio and Wacziarg, Romain T., Fractionalization (June 2002). Available at SSRN: https://ssrn.com/abstract=319762 or http://dx.doi.org/10.2139/ssrn.319762"
+                     ),
+                     
+                     p(
+                         "Gennaioli, Nicola and Rainer, Ilia, The Modern Impact of Precolonial Centralization in Africa (November 2005). Available at SSRN: https://ssrn.com/abstract=848164 or http://dx.doi.org/10.2139/ssrn.848164"
+                     ),
+                     
+                     p(
+                         "James, S.L., Gubbins, P., Murray, C.J. et al. Developing a comprehensive time series of GDP per capita for 210 countries from 1950 to 2015. Population Health Metrics 10, 12 (2012). https://doi.org/10.1186/1478-7954-10-12"
                      )
+                     
                  )
                  ),
         
@@ -893,8 +1154,88 @@ server <- function(input, output) {
         
     })
     
+    output$effect_size_method <- renderPlot({
+        
+        effect_size <- ggplot(time_series_data) +
+            
+            geom_line(
+                aes(x = Year,
+                    y = M5_PC_Income_Gain),
+                color = '#e78ac3',
+                alpha = 1,
+                size = 1.5) +
+            geom_line(
+                aes(x = Year,
+                    y = M1_PC_Income_Gain),
+                color = '#fc8d62',
+                alpha = 0.2,
+                size = .8) +
+            geom_line(
+                aes(x = Year,
+                    y = M2_PC_Income_Gain),
+                color = '#66c2a5',
+                alpha = 0.2,
+                size = .8) +
+            geom_line(
+                aes(x = Year,
+                    y = M3_PC_Income_Gain),
+                color = '#8da0cb',
+                alpha = 0.2,
+                size = .8) +
+            geom_line(
+                aes(x = Year,
+                    y = M4_PC_Income_Gain),
+                color = '#a6d854',
+                alpha = 0.2,
+                size = .8) +
+            geom_line(
+                aes(x = Year,
+                    y = M6_PC_Income_Gain),
+                color = '#ffd92f',
+                alpha = 0.2,
+                size = .8) +
+            custom + 
+            scale_y_continuous(name = '% increase in income associated with 1 s.d. decline',
+                               breaks = c(.1, .2, .3, .4, .5, .6),
+                               labels = scales::percent) +
+            scale_x_continuous(name = NULL,
+                               breaks = c(1950, 1960, 1970, 1980, 1990, 2000, 2010))
+        
+        effect_size
+        
+    })
     # Standard Deviation Decrease Plot -----
     output$sd_decrease <- renderPlot({
+        # Aiming to also animate this or make it interactive
+        
+        
+        # One std deviation decrease in slaves stolen -----
+        sd_decrease_plot <- ggplot(time_series_data) +
+            # Sample mean
+            geom_line(aes(x = Year,
+                          y = M5_Mean_Income),
+                      color = '#e5c494',
+                      size = 1.5) +
+            
+            # Standard deviation decrease in exports
+            geom_line(aes(x = Year,
+                          y = M5_Mean_Income + M5_Abs_Income_Gain),
+                      color = '#8da0cb',
+                      size = 1.5) +
+            scale_x_continuous(name = NULL,
+                               breaks = c(1950, 1960, 1970, 1980, 1990, 2000, 2010)) +
+            scale_y_continuous(
+                name = 'Per capita GDP',
+                breaks = seq(500, 2500, by = 500),
+                labels = paste('$', seq(500, 2500, by = 500)),
+                limits = c(500, 2500)
+            ) +
+            custom
+        
+        sd_decrease_plot
+    })
+    
+    output$sd_decrease_method <- renderPlot({
         # Aiming to also animate this or make it interactive
         
         
@@ -928,7 +1269,6 @@ server <- function(input, output) {
     # Data Table Output -----
     output$data_table <- function() {
         
-        
         renamed_slave_trade %>%
             select(input$variables_dt) %>%
             kbl() %>%
@@ -938,10 +1278,74 @@ server <- function(input, output) {
                           
                           fixed_thead = TRUE,
                           
-                          font_size = input$table_font_size
+                          font_size = input$table_font_size,
+                          
+                          bootstrap_options = c('striped', 'hover')
                           ) %>%
             scroll_box(width = '100%',
                        height = '500px')
+    }
+    # Regression LaTex ----
+    output$regression <- renderUI({
+        
+        withMathJax(
+            helpText('$$ln y_{1} = \\beta_{0} + \\beta_{1} ln(exports_{i}/area_{i}) + \\textbf{C}_{i}^\\prime \\delta + \\textbf{X}_{i}^\\prime \\gamma + \\epsilon_{i}$$')
+        )
+        
+    })
+    # Population Density Plot Output -----
+    output$popdens <- renderPlot ({
+        
+        p1 <- ggplot(
+            data = renamed_slave_trade,
+            mapping = aes(x = Ln_Population_Density_1400,
+                          y = Ln_Enslavement_by_Area),
+            alpha = 0.3
+        ) +
+            custom +
+            labs(x = 'Ln Enslavement by Area',
+                 y = 'Ln Population Density 1400')
+        
+        p1 <- p1 + geom_point(aes(
+                size = Land_Area,
+                text = Country),
+                color = 'dodgerblue',
+                alpha = 0.5)  +
+                
+            scale_size_continuous(guide = 'none')
+        
+        p1 <- p1 + geom_smooth(
+                formula = y ~ x,
+                method = 'lm',
+                se = FALSE,
+                color = 'gray30',
+                alpha = 0.5)
+        
+        p1
+        
+        
+        
+        
+    })
+    # Extended Analysis Table Output
+    output$table2decades <- function(){
+        years <- c(1950, 1960, 1970, 1980, 1990, 2000, 2010, 2015)
+        
+        time_series_data %>%
+            filter(Year %in% years) %>%
+            select(
+                Year,
+                'Enslavement Coefficient' = M5_Coeff,
+                'Mean Income ($)' = M5_Mean_Income,
+                'SD Abs Income Effect ($)' = M5_Abs_Income_Gain,
+                'SD Percent Income Effect' = M5_PC_Income_Gain
+            )  %>%
+            kbl() %>%
+            kable_styling(
+                font_size = 10,
+                bootstrap_options = c('striped', 'hover')
+            )
+        
     }
 }
 

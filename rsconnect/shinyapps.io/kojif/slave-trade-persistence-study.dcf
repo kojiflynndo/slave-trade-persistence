@@ -1,0 +1,13 @@
+name: slave-trade-persistence-study
+title: slave-trade-persistence-study
+username:
+account: kojif
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3530773
+bundleId: 4154535
+url: https://kojif.shinyapps.io/slave-trade-persistence-study/
+when: 1611856142.22245
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: name-keys.R|replication-extended.R|replication-loop.R|replication-original.R|Shiny Writing.Rmd
