@@ -584,7 +584,7 @@ ui <- fluidPage(
                      withMathJax(),
 
                      helpText(
-                         'where ln \\(y\\_{i}\\) is the natural logarithm of per capita GDP in country i in 2000, ln(exports \\(_{i}\\) /area \\(_{i}\\) ) is the natural logarithm of the number of people enslaved from 1400 to 1900 between 1400 and 1900 per 10,000 square kilometers, \\(\\textbf{C}_{i}^\\prime\\) is a vector of dummy variables for colonization by different European empires, and  \\(\\textbf{X}_{i}^\\prime\\) is a vector of variables to control for geography and climate.'
+                         'where ln \\(y_{i}\\) is the natural logarithm of per capita GDP in country i in 2000, ln(exports \\(_{i}\\) /area \\(_{i}\\) ) is the natural logarithm of the number of people enslaved from 1400 to 1900 between 1400 and 1900 per 10,000 square kilometers, \\(\\textbf{C}_{i}^\\prime\\) is a vector of dummy variables for colonization by different European empires, and  \\(\\textbf{X}_{i}^\\prime\\) is a vector of variables to control for geography and climate.'
                          ),
                      
                      p(
