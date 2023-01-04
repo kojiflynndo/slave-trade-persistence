@@ -100,7 +100,7 @@ ui <- fluidPage(
                 
                 # Section: Introduction -----
                 p(
-                    "The world has become much wealthier in the past several centuries since the Industrial Revolution. Extreme poverty (less than $1.90 per day) has declined from 94.4 percent in 1820 to 9.6 percent in 2015, though the COVID-19 pandemic has reversed a consistent trend toward declining worldwide poverty for the first time in decades. While global trends have been encouraging (prior to COVID-19), sub-Saharan Africa has seen an increase in absolute extreme poverty from the 1990s to 2015. Almost half a billion Africans suffer from extreme poverty."
+                    "The world has become much wealthier in the past several centuries since the Industrial Revolution. Extreme poverty (less than \$1.90 per day) has declined from 94.4 percent in 1820 to 9.6 percent in 2015, though the COVID-19 pandemic has reversed a consistent trend toward declining worldwide poverty for the first time in decades. While global trends have been encouraging (prior to COVID-19), sub-Saharan Africa has seen an increase in absolute extreme poverty from the 1990s to 2015. Almost half a billion Africans suffer from extreme poverty."
                 ),
                 
                 p(
@@ -145,7 +145,7 @@ ui <- fluidPage(
                 ),
                 
                 p(
-                    "The implications for explaining contemporary poverty and prosperity are significant. Starting from a country with mean per capita income in 2000 ($1,249), a one-standard-deviation decrease in the variable measuring intensity of enslavement is associated with per capita income rising to $1,864, or a 50 percent increase in per capita income levels (using Model 5)."
+                    "The implications for explaining contemporary poverty and prosperity are significant. Starting from a country with mean per capita income in 2000 (\$1,249), a one-standard-deviation decrease in the variable measuring intensity of enslavement is associated with per capita income rising to \$1,864, or a 50 percent increase in per capita income levels (using Model 5)."
                 ),
                 
                 # Section: New Analysis -----
@@ -158,7 +158,7 @@ ui <- fluidPage(
                 ),
                 
                 p(
-                    "The absolute difference in per capita income steadily grows over the entire time-series, reaching $677 per capita in 2015. The relative difference, on the other hand, peaks in 2000. At that point, a one-standard-deviation decrease in the variable measuring intensity of enslavement was associated with per capita income rising to $1,864 from the mean of $1,264, or a 49 percent increase in per capita income levels."
+                    "The absolute difference in per capita income steadily grows over the entire time-series, reaching \$677 per capita in 2015. The relative difference, on the other hand, peaks in 2000. At that point, a one-standard-deviation decrease in the variable measuring intensity of enslavement was associated with per capita income rising to \$1,864 from the mean of \$1,264, or a 49 percent increase in per capita income levels."
                 ),
                 
                 p(
@@ -672,11 +672,11 @@ ui <- fluidPage(
                      tableOutput('table2decades'),
                      
                      p(
-                         'I also replicate the tangible implications of the results for each year. In particular, Nunn writes: "If for purely illustrative purposes one interprets the OLS estimates as causal, then according to the estimate from column (5), for a country initially with the mean level of income of $1,249, a one-standard-deviation decrease in the slave export variable will raise income to $1,864, which is a 50% increase in income."'
+                         'I also replicate the tangible implications of the results for each year. In particular, Nunn writes: "If for purely illustrative purposes one interprets the OLS estimates as causal, then according to the estimate from column (5), for a country initially with the mean level of income of \$1,249, a one-standard-deviation decrease in the slave export variable will raise income to \$1,864, which is a 50% increase in income."'
                      ),
                      
                      p(
-                         'The absolute difference in per capita income steadily grows over the entire time-series I produce, reaching $677 per capita in 2015. The relative difference, on the other hand, peaks in 2000. At that point, a one-standard-deviation decrease in the variable measuring intensity of enslavement was associated with per capita income rising to $1,864 from the mean of $1,264, or a 49 percent increase in per capita income levels.'
+                         'The absolute difference in per capita income steadily grows over the entire time-series I produce, reaching \$677 per capita in 2015. The relative difference, on the other hand, peaks in 2000. At that point, a one-standard-deviation decrease in the variable measuring intensity of enslavement was associated with per capita income rising to \$1,864 from the mean of \$1,264, or a 49 percent increase in per capita income levels.'
                      ),
                      
                      p(
